@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class TextGame {
     protected ArrayList<Character> characters = new ArrayList<>();
 
+    // Mengambil karakter dari teks dan menyimpannya dalam list
     public void inputText(String text) {
         characters.clear();
         for (char c : text.toCharArray()) {
@@ -28,11 +29,12 @@ public class TextGame {
         return true;
     }
 
-    // Default behavior
+    // Default behavior (menggunakan karakter dari inputText)
     public boolean isPalindrome() {
         return isPalindrome(this.characters);
     }
 
+    // Menampilkan hasil pengecekan palindrome
     public void displayResult(String word) {
         System.out.println("Kata: " + word + (isPalindrome(word) ? " adalah Palindrome" : " bukan Palindrome"));
     }

@@ -2,7 +2,7 @@ package week2;
 
 public class Character {
 
-    String nama ;
+    String nama ;z
     int hp = 100;
     int level = 1;
     int exp = 0;
