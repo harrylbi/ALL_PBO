@@ -48,7 +48,7 @@ public class Main {
                     System.out.println("Luas lingkaran: " + lingkaran.hitungluas());
                     break;
                 case "keluar":
-                    close
+                    return;
                 default:
                     System.out.println("Bangun datar tidak dikenali.");
                     break;
