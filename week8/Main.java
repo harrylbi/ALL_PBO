@@ -54,7 +54,7 @@ public class Main {
                     break;
             }
 
-            scanner.nextLine(); // Membersihkan newline karakter setelah input angka
+            scanner.nextLine();
             System.out.print("Apakah Anda ingin mengulang (ya/tidak)? ");
             ulangi = scanner.nextLine().toLowerCase();
             
