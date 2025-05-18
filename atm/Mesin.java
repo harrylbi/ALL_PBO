@@ -2,15 +2,9 @@ package atm;
 
 public class Mesin {
     protected double saldo;
-    protected String nasabah;
 
-    public Mesin(String nasabah, double saldo) {
-        this.nasabah = nasabah;
+    public Mesin( double saldo) {
         this.saldo = saldo;
-    }
-
-    public String getNasabah() {
-        return nasabah;
     }
 
     public double getSaldo() {
@@ -22,7 +16,7 @@ public class Mesin {
     }
 
     public void tarik (double jumlah){
-        if (saldo <= jumlah){
+        if (saldo >= jumlah){
             saldo -= jumlah;
         }
         else {
@@ -30,8 +24,6 @@ public class Mesin {
         }
     }
 
-    public void tampilkaNama(){
-        System.out.println(nasabah);
-    }
+
     
 }
