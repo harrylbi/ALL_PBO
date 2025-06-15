@@ -9,8 +9,8 @@ public class Main {
         ArrayList <Nasabah>  daftarNasabah = new ArrayList<>();
 
         Scanner scanner = new Scanner(System.in);
-        Nasabah n1 = new Nasabah("harry",50000);
-        Nasabah n2 = new Nasabah("lbi",60000);
+        Nasabah n1 = new Nasabah("harry",70000);
+        Nasabah n2 = new Nasabah("lbi",90000);
 
         daftarNasabah.add(n1);
         daftarNasabah.add(n2);
@@ -27,6 +27,8 @@ public class Main {
 
 
             System.out.println("Selemat datang di ATM BANK LBI");
+            System.out.println("masukan nama anda");
+
             String inputnama = scanner.next();
             Nasabah namaNasabah = null;
 
