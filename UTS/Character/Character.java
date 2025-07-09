@@ -1,71 +1,43 @@
 package Character;
 
-public class Character {
+public abstract class Character {
     protected String nama;
-    protected int hp = 100;
-    protected int level = 1;
-    protected int exp = 0;
-    protected int potions = 3;
+    protected int hp;
+    protected int potions;
+    protected int level;
+    protected int exp;
 
     public Character(String nama) {
         this.nama = nama;
+        this.hp = 100; 
+        this.potions = 3; 
+        this.level = 1; 
+        this.exp = 0; 
     }
 
-    public void attack() {
-        System.out.println(nama + " menyerang musuh!");
-        tambahExp();
-    }
-
-    public void defend() {
-        System.out.println(nama + " bertahan dari serangan!");
-        hp -= 5;
-    }
+    // public abstract void attack();
+    // public abstract void defend();
+    // public abstract void gunakanRamuan();
 
     public void tambahExp() {
-        exp++;
-        if (exp >= 10) {
+        exp += 10; 
+        if (exp >= 100) {
             level++;
-            exp = 0;
-            System.out.println(nama + " naik level menjadi " + level);
+            exp -= 100;
+            System.out.println(nama + " naik level ke " + level + "!");
         }
-    }
-
-    public void attacked(int damage) {
-        hp -= damage;
-        System.out.println(nama + " diserang dan kehilangan " + damage + " HP!");
-    }
-
-    public void gunakanRamuan() {
-        if (potions > 0) {
-            hp += 20;
-            potions--;
-            System.out.println(nama + " menggunakan ramuan. HP sekarang: " + hp);
-        } else {
-            System.out.println("Ramuan habis!");
-        }
-    }
-
-    // Overloading
-    public void gunakanRamuan(int jumlah) {
-        for (int i = 0; i < jumlah && potions > 0; i++) {
-            gunakanRamuan();
-        }
-    }
-
-    public int getHp() {
-        return hp;
     }
 
     public String getNama() {
         return nama;
     }
-    
-    public int getSisaRamuan() {
-        return potions;
+
+    public boolean isAlive() {
+        return hp > 0;
     }
 
-    public int getExp(){
-        return exp;
+    public void attacked(int damage) {
+        hp -= damage;
+        System.out.println(nama + " diserang dan kehilangan " + damage + " HP! HP sekarang: " + hp);
     }
-    
 }
